@@ -28,3 +28,7 @@ P.S: contribution to this repo is strictly by quality code
 
 ![HackToberFest 1](https://github.com/OSCA-Ado-Ekiti/Hacktoberfest-2023-Ekiti-DSN/assets/53593233/09968dc6-ca20-486e-ac6b-29b69bdb8ff5)
 
+## Contributors
+
+Thanks to [all the contributors](https://github.com/OSCA-Ado-Ekiti/Hacktoberfest-Ekiti-Disease-Classifier/graphs/contributors)
+who helped participating in this project.
