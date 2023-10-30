@@ -9,7 +9,10 @@ https://hacktoberfest-ekiti.web.app/documentation/why-open-source
 https://hacktoberfest-ekiti.web.app/documentation/why-open-source#what-is-hacktoberfest
 
 ## How to kick-start as a beginner?
-check out this short introduction video from OSCA Ado-Ekiti: 
+
+Being a bigginner shouldn't scare you on how to contribute to this project. We made available how you can contribute to the project even as a bigger below 👇
+
+Check out this short introduction video from OSCA Ado-Ekiti: 
 https://youtu.be/YA_RVcEGZsg?si=wA-DKBCQnQPbfb4s
 
 ## Disease Classifier
