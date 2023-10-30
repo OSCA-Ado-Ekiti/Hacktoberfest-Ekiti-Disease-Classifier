@@ -1,7 +1,8 @@
 # Contribute to Data Science Project
 
 ## Why Open Source?
-
+ 
+Open source promotes universal access via an open-source or free license to a product's design or blueprint, and universal redistribution of that design or blueprint. Open source is source code that is made freely available for possible modification and redistribution. check this link to know more about Open Source;
 https://hacktoberfest-ekiti.web.app/documentation/why-open-source
 
 ## What is Hacktoberfest?
