@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="time; URL=index.html" />
+        <title>Borrower Details</title>
+    </head>
+    <style>
+        body{
+            background-image: url(/static/images/back.jpg);
+            background-color: rgb(5, 5, 20);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .ff{
+            justify-content: center;
+            text-align: center;
+            color: #f3f3fa;
+            font-size: 1.9rem;
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            height: 700px;
+            width: 490px;
+            /* border: 1px solid black; */
+            align-items: center;
+            margin: auto;
+            margin-top: 20px;
+            background-color: rgba(1, 0, 5, 0.8);
+            box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+        }
+
+        .form h2{
+            color: white;
+            font-size: 1.9rem;
+            border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+            margin: 30px;
+        }
+
+        .box{
+            padding: 12px;
+            margin: 10px;
+            width: 70%;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: -3px -3px rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            border: none; 
+
+        }
+
+        .boxx{
+            padding: 12px;
+            margin: 10px;
+            width: 66.8%;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: -3px -3px rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            border: none; 
+
+        }
+
+        #submit{
+            padding: 10px 20px;
+            margin-top: 20px;
+            width: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+
+
+        #submit:hover{
+            cursor: pointer;
+            background-color: rgb(100, 12, 12);
+            color: white;
+        }
+
+     
+        ::placeholder{
+            color: white;
+        }
+
+
+    </style>    
+
+    </head>
+ 
+    <body>
+        <form class="form" action="{{ url_for('loan_status')}}" method="post"> 
+
+            <h2>Borrower Details</h2>
+
+                    <input name="person_age" class="boxx" placeholder="Age" required>
+
+                    <input name="person_income" class="boxx" placeholder="Income" required>
+
+					<select name="home_ownership" class="box" required>
+                        <option value=" ">Select House Ownership</option>
+                        <option value=30>Rent</option>
+                        <option value=20>Mortgage</option>
+                        <option value=10>Personal Ownership</option>
+					</select>
+
+                    <input name="emp_length" class="boxx" placeholder="Employment Length(in years)" required>
+
+                    <select name="loan_intent" class="box" required>
+                        <option value=" ">Select Loan Intent</option>
+                        <option value=60>Education</option>
+                        <option value=50>Medical</option>
+                        <option value=40>Venture</option>
+                        <option value=30>Personal</option>
+                        <option value=20>Debt Consolidation</option>
+                        <option value=10>Home Improvement</option>
+					</select>                
+                   
+                    <select name="loan_grade" class="box" required>
+                        <option value=" ">Loan Grade(Measure of creditworthiness)</option> 
+                        <option value=70>A</option>
+                        <option value=60>B</option>    
+                        <option value=50>C</option>   
+                        <option value=40>D</option>      
+                        <option value=30>E</option>
+                        <option value=20>F</option>
+                        <option value=10>G</option>
+					</select>
+
+                    <input name="loan_amnt" class="boxx" placeholder="Loan Amount" required>
+
+                    <input name="cred_hist_length" class="boxx" placeholder="length of credit history(in years)" required>
+
+            <button id="submit" type="submit">Check Eligibility</button>
+
+        </form>
+  
+    </body>
+</html>

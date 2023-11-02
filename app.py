@@ -1,70 +1,40 @@
-import joblib
-import streamlit as st
-import sklearn
+#importing needed library
+import numpy as np
+from flask import Flask, request, jsonify, render_template, Request
 from joblib import load
+import sklearn
 
+# Create flask app
+app = Flask(__name__)
 model = load("model.joblib")
 
-def main():
-    st.title("Disease Classifier")
-    st.text("This model classfies common disease among Nigeria students")
+@app.route("/")
+def index():
+    return render_template("index.html")
 
-    
-    options = {'': 'Select an option(1 stands for Yes and 0 stands for No)','Yes': 1, 'No': 0,}
+@app.route("/form")
+def form():
+    return render_template("forms.html")
 
-    headache = st.selectbox('Headache', list(options.values()))
+@app.route("/loan_status", methods = ["POST"])
+def loan_status():
+    person_age = request.form.get('person_age')
+    person_income = request.form.get('person_income')
+    home_ownership = request.form.get('home_ownership')
+    emp_length = request.form.get('emp_length')
+    loan_intent = request.form.get('loan_intent')
+    loan_grade = request.form.get('loan_grade')
+    loan_amnt = request.form.get('loan_amnt')
+    cred_hist_length = request.form.get('cred_hist_length')
 
-    fatigue = st.selectbox('Fatigue', list(options.values()))
+    pred = model.predict([[person_age, person_income, home_ownership, 
+                           emp_length, loan_intent, loan_grade, loan_amnt, cred_hist_length]])
 
-    ys = st.selectbox('Yelowish Skin', list(options.values()))
-
-    ab = st.selectbox('Abdominal Pain', list(options.values()))
-
-    chills = st.selectbox('Chills', list(options.values()))
-
-    vomiting = st.selectbox('Vomiting', list(options.values()))
-
-    cs = st.selectbox('Continuous Sneezing', list(options.values()))
-
-    cough = st.selectbox('Cough', list(options.values()))
-
-    malaise = st.selectbox('Malaise', list(options.values()))
-
-    hf = st.selectbox('High Fever', list(options.values()))
-
-    itc = st.selectbox('Itching', list(options.values()))
-
-    mp = st.selectbox('Muscle Pull', list(options.values()))
-
-    mf = st.selectbox('Mild Fever', list(options.values()))
-
-    alf = st.selectbox('Acute Liver Failure', list(options.values()))
-
-    dz = st.selectbox('Dizziness', list(options.values()))
-
-    fhr = st.selectbox('Fast Heart Rate', list(options.values()))
+    if pred[0] == 0:
+        return render_template('non_default.html')
+    else:
+        return render_template('default.html')
 
 
-
-    prognosis = {'Allergy': 0, 'Peptic ulcer diseae': 1, 'Diabetes ': 2, 'Gastroenteritis': 3,
-       'Bronchial Asthma': 4, 'Hypertension ': 5, 'Migraine': 6, 'Malaria': 7,
-       'Chicken pox': 8, 'Typhoid': 9, 'hepatitis A': 10, 'Hepatitis B': 11,
-       'Hepatitis C': 12, 'Hepatitis D': 13, 'Hepatitis E': 14, 'Tuberculosis': 15,
-       'Common Cold': 16, 'Pneumonia': 17, 'Acne': 18, 'Urinary tract infection': 19}
-
-    def get_result_key(prog_dict, result_value):
-        for key, value in prog_dict.items():
-            if value == result_value:
-                return key
-
-    if st.button('Predict'):
-        mkpred = model.predict([[headache, fatigue, ys, ab, chills, vomiting, cs, cough, malaise, hf, itc, mp, mf, alf, dz, fhr]])
-        print([headache, fatigue, ys, ab, chills, vomiting, cs, cough, malaise, hf, itc, mp, mf, alf, dz, fhr])
-        result = mkpred[0]
-
-        result_key = get_result_key(prognosis, result)
-
-        st.success(f'The result of your diagnosis is {result_key}')
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    app.run(debug=True)
