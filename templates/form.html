@@ -2,15 +2,18 @@
 <html lang = "en">
 
     <head>
+        <title>Disease Classifier | Take Test</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords"> 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="refresh" content="time; URL=index.html" />
-        <title>Borrower Details</title>
+        <link href="static/img/dsn_eksu_logo.png" rel="icon">
+        <link href="static/img/dsn_eksu_logo.png" rel="apple-touch-icon">
     </head>
     <style>
         body{
-            background-image: url(/static/images/back.jpg);
-            background-color: rgb(5, 5, 20);
+            background-color: rgb(178, 182, 204);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -27,7 +30,7 @@
             display: flex;
             flex-direction: column;
             height: 700px;
-            width: 490px;
+            width: 900px;
             /* border: 1px solid black; */
             align-items: center;
             margin: auto;
@@ -104,52 +107,132 @@
     </head>
  
     <body>
-        <!-- <form class="form" action="{{ url_for('loan_status')}}" method="post">  -->
-        <form class="form"> 
+        <form class= "form" action="{{ url_for('result')}}"method="post"> 
+            
+            <h2>Take this test to determine the nature of illness</h2>
+            
+            <select name="headache" class="box" required>
+                <option value=" ">Do you have headache?</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
 
-            <h2>Borrower Details</h2>
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
 
-                    <input name="person_age" class="boxx" placeholder="Age" required>
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
 
-                    <input name="person_income" class="boxx" placeholder="Income" required>
-
-					<select name="home_ownership" class="box" required>
-                        <option value=" ">Select House Ownership</option>
-                        <option value=30>Rent</option>
-                        <option value=20>Mortgage</option>
-                        <option value=10>Personal Ownership</option>
-					</select>
-
-                    <input name="emp_length" class="boxx" placeholder="Employment Length(in years)" required>
-
-                    <select name="loan_intent" class="box" required>
-                        <option value=" ">Select Loan Intent</option>
-                        <option value=60>Education</option>
-                        <option value=50>Medical</option>
-                        <option value=40>Venture</option>
-                        <option value=30>Personal</option>
-                        <option value=20>Debt Consolidation</option>
-                        <option value=10>Home Improvement</option>
-					</select>                
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>                
                    
-                    <select name="loan_grade" class="box" required>
-                        <option value=" ">Loan Grade(Measure of creditworthiness)</option> 
-                        <option value=70>A</option>
-                        <option value=60>B</option>    
-                        <option value=50>C</option>   
-                        <option value=40>D</option>      
-                        <option value=30>E</option>
-                        <option value=20>F</option>
-                        <option value=10>G</option>
-					</select>
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
 
-                    <input name="loan_amnt" class="boxx" placeholder="Loan Amount" required>
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
 
-                    <input name="cred_hist_length" class="boxx" placeholder="length of credit history(in years)" required>
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <select name="home_ownership" class="box" required>
+                <option value=" ">Select House Ownership</option>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
 
             <button id="submit" type="submit">Check Eligibility</button>
 
         </form>
-  
     </body>
 </html>

@@ -6,7 +6,7 @@ import sklearn
 
 # Create flask app
 app = Flask(__name__)
-# model = load("model.joblib")
+model = load("model.joblib")
 
 @app.route("/")
 def index():
@@ -16,25 +16,27 @@ def index():
 def form():
     return render_template("form.html")
 
-# @app.route("/loan_status", methods = ["POST"])
-# def loan_status():
-#     person_age = request.form.get('person_age')
-#     person_income = request.form.get('person_income')
-#     home_ownership = request.form.get('home_ownership')
-#     emp_length = request.form.get('emp_length')
-#     loan_intent = request.form.get('loan_intent')
-#     loan_grade = request.form.get('loan_grade')
-#     loan_amnt = request.form.get('loan_amnt')
-#     cred_hist_length = request.form.get('cred_hist_length')
+@app.route("/result", methods = ["POST"])
+def result():
+    float_features = [float(x) for x in request.form.values()]
+    features = [np.array(float_features)]
 
-#     pred = model.predict([[person_age, person_income, home_ownership, 
-#                            emp_length, loan_intent, loan_grade, loan_amnt, cred_hist_length]])
+    prognosis = {'Allergy': 0, 'Peptic ulcer diseae': 1, 'Diabetes ': 2, 'Gastroenteritis': 3,
+       'Bronchial Asthma': 4, 'Hypertension ': 5, 'Migraine': 6, 'Malaria': 7,
+       'Chicken pox': 8, 'Typhoid': 9, 'hepatitis A': 10, 'Hepatitis B': 11,
+       'Hepatitis C': 12, 'Hepatitis D': 13, 'Hepatitis E': 14, 'Tuberculosis': 15,
+       'Common Cold': 16, 'Pneumonia': 17, 'Acne': 18, 'Urinary tract infection': 19}
 
-#     if pred[0] == 0:
-#         return render_template('non_default.html')
-#     else:
-#         return render_template('default.html')
+    def get_result_key(prog_dict, result_value):
+        for key, value in prog_dict.items():
+            if value == result_value:
+                return key
 
+    prediction = model.predict(features)
+
+    result_key = get_result_key(prognosis, prediction)
+
+    return render_template("form.html", prediction_text = "The result of your diagnosis is {result_key}, visit your doctor")
 
 if __name__ == "__main__":
     app.run(debug=True)
