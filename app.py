@@ -1,50 +1,25 @@
-import joblib
-import streamlit as st
-import sklearn
+#importing needed library
+import numpy as np
+from flask import Flask, request, jsonify, render_template, Request
 from joblib import load
+import sklearn
 
+# Create flask app
+app = Flask(__name__)
 model = load("model.joblib")
 
-def main():
-    st.title("Disease Classifier")
-    st.text("This model classfies common disease among Nigeria students")
+@app.route("/")
+def index():
+    return render_template("index.html")
 
-    
-    options = {'': 'Select an option(1 stands for Yes and 0 stands for No)','Yes': 1, 'No': 0,}
+@app.route("/form")
+def form():
+    return render_template("form.html")
 
-    headache = st.selectbox('Headache', list(options.values()))
-
-    fatigue = st.selectbox('Fatigue', list(options.values()))
-
-    ys = st.selectbox('Yelowish Skin', list(options.values()))
-
-    ab = st.selectbox('Abdominal Pain', list(options.values()))
-
-    chills = st.selectbox('Chills', list(options.values()))
-
-    vomiting = st.selectbox('Vomiting', list(options.values()))
-
-    cs = st.selectbox('Continuous Sneezing', list(options.values()))
-
-    cough = st.selectbox('Cough', list(options.values()))
-
-    malaise = st.selectbox('Malaise', list(options.values()))
-
-    hf = st.selectbox('High Fever', list(options.values()))
-
-    itc = st.selectbox('Itching', list(options.values()))
-
-    mp = st.selectbox('Muscle Pull', list(options.values()))
-
-    mf = st.selectbox('Mild Fever', list(options.values()))
-
-    alf = st.selectbox('Acute Liver Failure', list(options.values()))
-
-    dz = st.selectbox('Dizziness', list(options.values()))
-
-    fhr = st.selectbox('Fast Heart Rate', list(options.values()))
-
-
+@app.route("/result", methods = ["POST"])
+def result():
+    float_features = [float(x) for x in request.form.values()]
+    features = [np.array(float_features)]
 
     prognosis = {'Allergy': 0, 'Peptic ulcer diseae': 1, 'Diabetes ': 2, 'Gastroenteritis': 3,
        'Bronchial Asthma': 4, 'Hypertension ': 5, 'Migraine': 6, 'Malaria': 7,
@@ -57,14 +32,11 @@ def main():
             if value == result_value:
                 return key
 
-    if st.button('Predict'):
-        mkpred = model.predict([[headache, fatigue, ys, ab, chills, vomiting, cs, cough, malaise, hf, itc, mp, mf, alf, dz, fhr]])
-        print([headache, fatigue, ys, ab, chills, vomiting, cs, cough, malaise, hf, itc, mp, mf, alf, dz, fhr])
-        result = mkpred[0]
+    prediction = model.predict(features)
 
-        result_key = get_result_key(prognosis, result)
+    result_key = get_result_key(prognosis, prediction)
 
-        st.success(f'The result of your diagnosis is {result_key}')
+    return render_template("result.html", prediction_text = f"{result_key}")
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    app.run(debug=True)

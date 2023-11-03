@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <title>Disease Classifier | Take Test</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="time; URL=index.html" />
+        <link href="static/img/dsn_eksu_logo.png" rel="icon">
+        <link href="static/img/dsn_eksu_logo.png" rel="apple-touch-icon">
+
+          <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+        <link href="static/vendor/aos/aos.css" rel="stylesheet">
+        <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+        <link href="static/css/style.css" rel="stylesheet">
+    </head>
+    <style>
+        body{
+            background-image: url(/static/images/back.jpg);
+            background-color: #575754;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .ff{
+            justify-content: center;
+            text-align: center;
+            color: #f3f3fa;
+            font-size: 1.9rem;
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            height: 1350px;
+            width: 600px;
+            align-items: center;
+            margin: auto;
+            margin-top: 120px;
+            background-color: rgba(1, 0, 5, 0.8);
+            box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            margin-bottom: 30px;
+        }
+
+
+        .form h2{
+            color: white;
+            font-size: 1.9rem;
+            border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+            margin: 30px;
+        }
+
+        .box{
+            padding: 12px;
+            margin: 10px;
+            width: 70%;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: -3px -3px rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            border: none; 
+
+        }
+
+        .boxx{
+            padding: 12px;
+            margin: 10px;
+            width: 66.8%;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: -3px -3px rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            border: none; 
+
+        }
+
+        #submit{
+            padding: 10px 20px;
+            margin-top: 20px;
+            width: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        #submit:hover{
+            cursor: pointer;
+            background-color: #E03A3C;
+            color: white;
+        }
+     
+        ::placeholder{
+            color: white;
+        }
+    </style>     
+
+    </head>
+ 
+    <body>
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center">
+              <h1 class="logo me-auto"><a href="/">ML dgnoz<span>.</span></a></h1>
+              <!-- Uncomment below if you prefer to use an image logo -->
+              <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
+        
+              <nav id="navbar" class="navbar order-last order-lg-0">
+
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </div>
+        </header><!-- End Header -->
+
+        <form class= "form" action="{{ url_for('result')}}"method="post"> 
+            
+          <h2>Take this test to determine the nature of illness</h2>
+          
+          <select name="headache" class="box" required>
+              <option value=" ">Do you have headache?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="fast_heart_rate " class="box" required>
+              <option value=" ">Fast Heart Rate?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="dizziness" class="box" required>
+              <option value=" ">Dizziness?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="acute_liver_failure" class="box" required>
+              <option value=" ">Acute Liver Failure?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>                
+                 
+          <select name="mild_fever" class="box" required>
+              <option value=" ">Mild Fever?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="muscle_pain" class="box" required>
+              <option value=" ">Muscle Pain?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="itching" class="box" required>
+              <option value=" ">Itching?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="high_fever" class="box" required>
+              <option value=" ">High Fever?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="malaise" class="box" required>
+              <option value=" ">Malaise?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="cough" class="box" required>
+              <option value=" ">Cough?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="continuous_sneezing" class="box" required>
+              <option value=" ">Continuous Sneezing?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="vomiting" class="box" required>
+              <option value=" ">Vomiting?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="chills" class="box" required>
+              <option value=" ">Chills?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="abdominal_pain" class="box" required>
+              <option value=" ">Abdominal Pain?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="yellowish_skin" class="box" required>
+              <option value=" ">Yellowish Skin?</option>
+              <option value=1>Yes</option>
+              <option value=0>No</option>
+          </select>
+
+          <select name="fatigue" class="box" required>
+            <option value=" ">Fatigue?</option>
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+        </select>
+
+          <button id="submit" type="submit">Diagnose</button>
+
+      </form>
+
+      <footer id="footer">
+
+        <div class="container d-md-flex py-4">
+    
+          <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+      With love from  <strong><span>DSN EKSU.</span></strong>
+            </div>
+            <div class="credits">
+              Mail: <a href="#">dsn_eksu@datasciencenigeria.ai</a>
+            </div>
+          </div>
+          <div class="social-links text-center text-md-end pt-3 pt-md-0">
+            <a href="https://twitter.com/aiclubeksu" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="https://github.com/OSCA-Ado-Ekiti/Hacktoberfest-Ekiti-Disease-Classifier" class="github"><i class="bx bxl-github"></i></a>
+          </div>
+        </div>
+      </footer><!-- End Footer -->
+    
+      <!-- Vendor JS Files -->
+      <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="static/vendor/aos/aos.js"></script>
+      <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="static/vendor/php-email-form/validate.js"></script>
+    
+      <!-- Template Main JS File -->
+      <script src="static/js/main.js"></script>
+
+
+    </body>
+</html>
+
