@@ -34,6 +34,7 @@ fqdn==1.5.1
 fsspec==2023.9.2
 gitdb==4.0.10
 GitPython==3.1.38
+gunicorn==21.2.0
 idna==3.4
 importlib-metadata==6.8.0
 ipykernel==6.25.2
