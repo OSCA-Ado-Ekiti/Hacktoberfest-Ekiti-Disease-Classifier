@@ -1,4 +1,4 @@
-altair==5.1.2
+altair
 anyio==4.0.0
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
