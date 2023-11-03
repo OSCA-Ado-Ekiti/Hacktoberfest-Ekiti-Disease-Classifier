@@ -46,9 +46,9 @@ Jinja2
 joblib
 json5==0.9.14
 jsonpointer==2.4
-jsonschema==4.19.1
-jsonschema-specifications==2023.7.1
-jupyter-events==0.8.0
+jsonschema
+jsonschema-specifications
+jupyter-events
 jupyter-lsp==2.2.0
 jupyter-server-mathjax==0.2.6
 jupyter_client==8.4.0
