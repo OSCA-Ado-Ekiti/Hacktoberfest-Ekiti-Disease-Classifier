@@ -36,7 +36,7 @@ def result():
 
     result_key = get_result_key(prognosis, prediction)
 
-    return render_template("form.html", prediction_text = "The result of your diagnosis is {result_key}, visit your doctor")
+    return render_template("result.html", prediction_text = f"{result_key}")
 
 if __name__ == "__main__":
     app.run(debug=True)

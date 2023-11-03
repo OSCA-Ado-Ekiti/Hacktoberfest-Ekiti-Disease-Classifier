@@ -1,12 +1,9 @@
 scikit-learn
-streamlit
 xlrd
 pandas
 numpy
-seaborn
-matplotlib
 colorama
 openpyxl
 Pillow
-missingno
-keras
+joblib
+Flask

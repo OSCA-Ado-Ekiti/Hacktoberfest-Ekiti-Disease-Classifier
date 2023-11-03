@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Disease Classifier | Result</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="time; URL=index.html" />
+        <link href="static/img/dsn_eksu_logo.png" rel="icon">
+        <link href="static/img/dsn_eksu_logo.png" rel="apple-touch-icon">
+
+          <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+        <link href="static/vendor/aos/aos.css" rel="stylesheet">
+        <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+        <link href="static/css/style.css" rel="stylesheet">
+    </head>
+    <style>
+        body{
+            background-image: url(/static/images/back.jpg);
+            height: 700px;
+            color: #f3f3fa;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .ff{
+            justify-content: center;
+            text-align: center;
+            color: #f3f3fa;
+            font-size: 1.9rem;
+        }
+
+        .imcp{
+            margin-top: 120px;
+            justify-content: center;
+            text-align: center;
+        }
+        .img {
+            height: 400px;
+            width: 700px;
+            border-radius: 8px;
+        }
+        .cpbg{
+            height: 100px;
+            width: 700px;
+            border-radius: 8px;
+            background-color: #E03A3C;
+            text-align: center;
+            margin: 20px auto;  
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+        }
+        .cp {
+            font-size: 2rem;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+
+
+    </style>    
+    <body>
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center">
+              <h1 class="logo me-auto"><a href="/">ML dgnoz<span>.</span></a></h1>
+              <!-- Uncomment below if you prefer to use an image logo -->
+              <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
+        
+              <nav id="navbar" class="navbar order-last order-lg-0">
+
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </div>
+        </header><!-- End Header -->
+
+        <div class="imcp">
+            <img class="img" src="/static/img/result.jpg", alt="default">
+            <div class="cpbg">
+                <p class="cp">The result of your diagnosis is <strong>{{ prediction_text }}</strong>. Please visit your doctor</p>
+            </div>
+        </div>
+
+    </body>
+</html>
