@@ -40,3 +40,5 @@ P.S: contribution to this repo is strictly by quality code
 
 Thanks to [all the contributors](https://github.com/OSCA-Ado-Ekiti/Hacktoberfest-Ekiti-Disease-Classifier/graphs/contributors)
 who helped participating in this project.
+
+Project Live link: https://mldiagnoz.onrender.com/
